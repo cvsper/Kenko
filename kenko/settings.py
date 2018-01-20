@@ -25,7 +25,7 @@ SECRET_KEY = 'wg9gdyqglk4h)9&xc32kba04frd86-h@k6+f@mnx*3c@8s=1_l'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['polar-depths-47278.herokuapp.com']
 
 
 # Application definition
