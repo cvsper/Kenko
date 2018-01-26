@@ -1,0 +1,41 @@
+{% extends 'carepro/base.html' %}
+
+{% block page %}
+  <div class="panel">
+        <div class="panel-heading bg-blue">
+            <h4 class="panel-title text-center text-white">Care Options</h4>
+        </div>
+        <div class="panel-body">
+            <div class="text-right">
+                <a href="{% url 'carepro-add-care' %}" class="btn btn-pink">Add Care Option</a>
+                <br/>
+                <br/>
+            </div>
+
+            <table class="table table-bordered table-hover table-striped">
+                <thead>
+                  <tr class="bg-gray text-white">
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Short Description</th>
+                    <th>Hourly Rate</th>
+                    <th class="text-center">Image</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for care in cares %}
+                        <tr>
+                          <td scope="row">{{ care.id }}</td>
+                          <td><a href="{% url 'carepro-edit-care' care.id %}">{{ care.name }}</a></td>
+                          <td>{{ care.short_desc }}</td>
+                          <td>{{ care.price }}</td>
+                          <td class="text-center"><img class="img-rounded"
+                              src="{{ MEDIA_URL }}{{ care.image }}" width="50" height="50"></td>
+                        </tr>
+
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
